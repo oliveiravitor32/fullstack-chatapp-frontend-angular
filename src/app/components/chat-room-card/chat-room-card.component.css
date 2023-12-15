@@ -1,0 +1,40 @@
+section {
+  width: 100px;
+  height: 100px;
+  background-color: var(--fourth-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  margin: 100px 300px;
+  border: 2px solid var(--second-color);
+  gap: 5px;
+  -webkit-box-shadow: 2px 2px 2px 1px #404040;
+  -moz-box-shadow: 2px 2px 2px 1px #404040;
+  box-shadow: 2px 2px 2px 1px #404040;
+  cursor: pointer;
+}
+
+section:hover {
+  transform: scale(1.1);
+}
+
+section:active {
+  background-color: var(--fifth-color);
+}
+
+.icon {
+  user-select: none;
+  background-color: var(--third-color);
+  color: var(--first-color);
+  font-size: 30px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 10px;
+}
+
+section h3 {
+  user-select: none;
+  color: var(--first-color);
+}
