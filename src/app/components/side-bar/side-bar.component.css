@@ -7,5 +7,35 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 40px 0;
+  padding: 60px 0;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+}
+
+.container-room-infos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  flex: 2;
+}
+
+.container-room-infos a {
+  color: white;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  width: 100%;
+}
+
+.container-room-infos a:hover {
+  background-color: #63bf7a;
+}
+
+.sign-out-link {
+  color: white;
+  font-weight: 800;
+  font-size: 24px;
 }

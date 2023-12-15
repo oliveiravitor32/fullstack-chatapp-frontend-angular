@@ -1,8 +1,6 @@
 .container {
   display: flex;
   gap: 5px;
-  width: 100%;
-  justify-content: center;
 }
 
 .container-infos {
