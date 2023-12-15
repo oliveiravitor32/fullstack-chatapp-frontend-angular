@@ -1,13 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormLoginComponent } from './form-login/form-login.component';
-import { FormRegisterComponent } from './form-register/form-register.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginRegisterComponent } from './login-register.component';
 
-const routes: Routes = [
-  { path: 'register', component: FormRegisterComponent },
-  { path: 'login', component: FormLoginComponent },
-];
+const routes: Routes = [{ path: 'auth', component: LoginRegisterComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes), ReactiveFormsModule],

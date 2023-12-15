@@ -6,6 +6,7 @@ import { ChatRoomsModule } from './views/chat-rooms/chat-rooms.module';
 
 import { AppComponent } from './app.component';
 import { ChatComponent } from './views/chat/chat.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, ChatComponent],
@@ -14,6 +15,7 @@ import { ChatComponent } from './views/chat/chat.component';
     AppRoutingModule,
     LoginRegisterModule,
     ChatRoomsModule,
+    NoopAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
