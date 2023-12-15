@@ -8,6 +8,7 @@ import { ChatRoomsComponent } from './views/chat-rooms/chat-rooms.component';
 import { ChatComponent } from './views/chat/chat.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginRegisterModule } from './views/login-register/login-register.module';
+import { PersonalCardComponent } from './components/personal-card/personal-card.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { LoginRegisterModule } from './views/login-register/login-register.modul
     ChatRoomsComponent,
     PersonalIconComponent,
     ChatComponent,
+    PersonalCardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, LoginRegisterModule],
   providers: [],

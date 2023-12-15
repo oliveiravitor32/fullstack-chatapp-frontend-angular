@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+  justify-content: center;
+}
+
+.container-infos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-infos h2 {
+  font-size: 20px;
+  color: var(--first-color);
+}
+
+.container-infos button {
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+  color: var(--fifth-color);
+  cursor: pointer;
+}
