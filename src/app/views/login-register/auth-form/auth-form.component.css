@@ -32,7 +32,19 @@ button {
   color: white;
   background-color: #404040;
 }
+.container-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  padding: 20px 0;
+}
 
 .field {
   width: 100%;
+}
+
+button:disabled {
+  opacity: 0.8;
+  cursor: default;
 }

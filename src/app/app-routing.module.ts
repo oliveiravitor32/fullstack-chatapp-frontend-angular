@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'auth',
     loadChildren: () =>
       import('./views/login-register/login-register.module').then(
         (m) => m.LoginRegisterModule
@@ -15,6 +15,11 @@ const routes: Routes = [
       import('./views/chat-rooms/chat-rooms.module').then(
         (m) => m.ChatRoomsModule
       ),
+  },
+  {
+    path: 'chatrooms/chat',
+    loadChildren: () =>
+      import('./views/chat/chat.module').then((m) => m.ChatModule),
   },
 ];
 

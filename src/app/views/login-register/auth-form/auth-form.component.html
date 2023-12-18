@@ -1,14 +1,15 @@
-<form action="">
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
   <legend>Sign in to ChatApp</legend>
-  <mat-form-field class="field">
-    <mat-label>Nickname</mat-label>
-    <input matInput type="text" [formControl]="nickname" />
-  </mat-form-field>
+  <div class="container-fields">
+    <mat-form-field class="field">
+      <mat-label>Nickname</mat-label>
+      <input matInput type="text" formControlName="nickname" />
+    </mat-form-field>
 
-  <mat-form-field class="field">
-    <mat-label>Password</mat-label>
-    <input matInput type="password" [formControl]="password" />
-  </mat-form-field>
-
-  <button>Sign in</button>
+    <mat-form-field class="field">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password" />
+    </mat-form-field>
+  </div>
+  <button type="submit" [disabled]="!profileForm.valid">Sign in</button>
 </form>

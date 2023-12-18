@@ -6,9 +6,16 @@ import { LoginRegisterComponent } from './login-register.component';
 import { AuthFormComponent } from './auth-form/auth-form.component';
 import { SharedMaterialModule } from 'src/app/shared/shared-material.module';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [LoginRegisterComponent, AuthFormComponent],
   exports: [LoginRegisterComponent, AuthFormComponent],
-  imports: [CommonModule, LoginRegisterRoutingModule, SharedMaterialModule],
+  imports: [
+    CommonModule,
+    LoginRegisterRoutingModule,
+    SharedMaterialModule,
+    ReactiveFormsModule,
+  ],
 })
 export class LoginRegisterModule {}
