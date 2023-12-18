@@ -3,7 +3,10 @@
   <section class="container-chat">
     <header>Chat Room: #151</header>
     <section class="chat-section">
-      <div class="container-messages"></div>
+      <div class="container-messages">
+        <app-received-message></app-received-message>
+        <app-sent-message></app-sent-message>
+      </div>
     </section>
     <form (submit)="onSubmit($event)" class="form-send-message">
       <mat-form-field class="mat-form-field-sm">

@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 40%;
+  padding: 15px 20px;
+  border-radius: 0px 20px 20px 20px;
+  gap: 10px;
+  background-color: var(--third-color);
+  color: var(--first-color);
+  font-size: 18;
+  font-weight: 600;
+}
+.container span {
+  font-weight: 700;
+  font-size: 20px;
+  color: rgb(6, 61, 179);
+}
