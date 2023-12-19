@@ -7,8 +7,7 @@ section {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  background-size: 10%;
-
+  background-size: 50%;
   background: rgb(242, 242, 242);
   background-image: url("../../../assets/background-view-welcome.svg");
 }
@@ -60,4 +59,57 @@ article p {
 
 .container-redirect-auth button:hover {
   background-color: var(--fourth-color);
+}
+
+@media screen and (max-width: 1000px) {
+  article {
+    width: 550px;
+  }
+
+  article h1 {
+    font-size: 30px;
+  }
+
+  article p {
+    font-size: 24px;
+  }
+  .container-redirect-auth {
+    width: 275px;
+    padding: 15px 0;
+    gap: 0px;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  article {
+    width: 380px;
+  }
+
+  article h1 {
+    font-size: 24px;
+  }
+
+  article p {
+    font-size: 18px;
+  }
+  .container-redirect-auth {
+    width: 180px;
+    padding: 10px 0;
+    border: 3px solid rgb(61, 61, 61);
+  }
+  .container-redirect-auth button {
+    font-size: 14px;
+    padding: 10px 6px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  article {
+    width: 300px;
+  }
+
+  article p {
+    font-size: 16px;
+  }
 }
