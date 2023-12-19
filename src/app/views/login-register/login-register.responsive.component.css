@@ -1,0 +1,13 @@
+@media screen and (max-width: 500px) {
+  h1 {
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+  }
+  .container {
+    padding: 0 6px;
+  }
+  .auth-form {
+    width: 100%;
+  }
+}

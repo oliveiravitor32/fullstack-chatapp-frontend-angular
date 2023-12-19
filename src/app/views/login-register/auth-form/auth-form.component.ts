@@ -3,7 +3,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-auth-form',
   templateUrl: './auth-form.component.html',
-  styleUrls: ['./auth-form.component.css'],
+  styleUrls: [
+    './auth-form.component.css',
+    './auth-form.responsive.component.css',
+  ],
 })
 export class AuthFormComponent {
   profileForm = new FormGroup({
