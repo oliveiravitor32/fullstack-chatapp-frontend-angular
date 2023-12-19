@@ -5,13 +5,17 @@ import { Subject } from 'rxjs';
 @Component({
   selector: 'app-chat-rooms',
   templateUrl: './chat-rooms.component.html',
-  styleUrls: ['./chat-rooms.component.css'],
+  styleUrls: [
+    './chat-rooms.component.css',
+    './chat-rooms.responsive.component.css',
+  ],
 })
 export class ChatRoomsComponent implements OnInit {
   private resizeSubject = new Subject();
   private resizeSubscription;
 
   desktopWindow: boolean = true;
+  menuOpen: boolean = true;
 
   constructor() {
     this.resizeSubscription = this.resizeSubject
@@ -31,7 +35,12 @@ export class ChatRoomsComponent implements OnInit {
       this.desktopWindow = false;
     } else {
       this.desktopWindow = true;
+      this.menuOpen = false;
     }
+  }
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
   }
 
   @HostListener('window:resize', ['$event'])

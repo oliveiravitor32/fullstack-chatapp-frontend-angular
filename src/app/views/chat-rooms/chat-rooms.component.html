@@ -1,7 +1,21 @@
 <div class="container">
-  <app-side-bar *ngIf="desktopWindow"></app-side-bar>
+  <app-side-bar
+    *ngIf="desktopWindow || menuOpen"
+    [enableAnimation]="!desktopWindow"
+  ></app-side-bar>
   <section class="chat-rooms-section">
-    <header>Chat Rooms</header>
+    <header>
+      Chat Rooms
+      <button
+        mat-icon-button
+        aria-label="button with icon to open the menu"
+        *ngIf="!desktopWindow"
+        (click)="toggleMenu()"
+        class="button-menu"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+    </header>
     <app-chat-room-card></app-chat-room-card>
     <app-chat-room-card></app-chat-room-card>
     <app-chat-room-card></app-chat-room-card>
@@ -18,7 +32,6 @@
     <app-chat-room-card></app-chat-room-card>
     <app-chat-room-card></app-chat-room-card>
     <app-chat-room-card></app-chat-room-card>
-
     <app-chat-room-card></app-chat-room-card>
   </section>
 </div>

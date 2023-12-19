@@ -1,4 +1,4 @@
-<nav class="container">
+<nav class="container" [ngClass]="enableAnimation ? 'animation' : ''">
   <app-personal-card></app-personal-card>
   <div class="container-room-infos">
     <a routerLink="">New room</a>

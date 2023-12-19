@@ -9,12 +9,11 @@
   flex: 1;
   display: grid;
   grid-template-columns: 200px;
-  grid-template-columns: repeat(auto-fill, 100px);
-  grid-template-rows: repeat(auto-fill, 100px);
+  grid-template-columns: repeat(auto-fill, 140px);
+  grid-template-rows: repeat(auto-fill, 140px);
   gap: 80px;
   overflow: auto;
   background-image: url(../../../assets/SprinkleBackgroundChatRoom.svg);
-
   background-size: 130%;
 }
 
@@ -26,4 +25,19 @@
   font-weight: 700;
   font-size: 24px;
   color: var(--first-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+mat-icon {
+  color: white;
+  font-size: 30px;
+  margin: 0 2px 5px 0;
+  text-align: center;
 }

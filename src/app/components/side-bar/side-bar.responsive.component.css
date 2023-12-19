@@ -1,0 +1,21 @@
+@media screen and (max-width: 800px) {
+  .container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    min-width: 240px;
+  }
+  .container.animation {
+    animation: open 0.2s linear;
+  }
+}
+
+@keyframes open {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0;
+  }
+}
