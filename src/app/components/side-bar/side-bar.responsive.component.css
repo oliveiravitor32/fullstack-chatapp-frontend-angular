@@ -1,10 +1,13 @@
 @media screen and (max-width: 800px) {
   .container {
+    padding: 20px 0;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 2;
     min-width: 240px;
+    overflow: auto;
+    gap: 40px;
   }
   .container.animation {
     animation: open 0.2s linear;

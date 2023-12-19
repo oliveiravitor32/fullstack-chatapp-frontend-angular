@@ -4,10 +4,7 @@
     font-weight: 700;
     font-size: 20px;
   }
-  .container .chat-rooms-section {
-    padding: 200px 20px;
-    flex: 1;
-    display: grid;
+  .container-chat-rooms-card {
     grid-template-columns: 200px;
     grid-template-columns: repeat(auto-fill, 100px);
     grid-template-rows: repeat(auto-fill, 100px);

@@ -15,7 +15,7 @@ export class ChatRoomsComponent implements OnInit {
   private resizeSubscription;
 
   desktopWindow: boolean = true;
-  menuOpen: boolean = true;
+  menuOpen: boolean = false;
 
   constructor() {
     this.resizeSubscription = this.resizeSubject

@@ -16,6 +16,22 @@
   font-weight: 700;
   font-size: 24px;
   color: var(--first-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+mat-icon {
+  color: white;
+  font-size: 30px;
+  margin: 0 2px 5px 0;
+  text-align: center;
 }
 
 .chat-section {
@@ -24,6 +40,8 @@
   background-color: #cfcfcf;
   background-image: url(../../../assets/background-chat-view.svg);
   background-size: 30%;
+  overflow: auto;
+  min-height: 300px;
 }
 
 .container-messages {

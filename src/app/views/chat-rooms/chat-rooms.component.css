@@ -4,21 +4,26 @@
 }
 
 .container .chat-rooms-section {
-  position: relative;
-  padding: 200px 50px;
+  height: 100%;
   flex: 1;
-  display: grid;
-  grid-template-columns: 200px;
-  grid-template-columns: repeat(auto-fill, 140px);
-  grid-template-rows: repeat(auto-fill, 140px);
-  gap: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
   overflow: auto;
   background-image: url(../../../assets/SprinkleBackgroundChatRoom.svg);
   background-size: 130%;
 }
 
+.container-chat-rooms-card {
+  display: grid;
+  grid-template-columns: 200px;
+  grid-template-columns: repeat(auto-fill, 140px);
+  grid-template-rows: repeat(auto-fill, 140px);
+  padding: 0 30px;
+  gap: 80px;
+}
+
 .container .chat-rooms-section header {
-  position: absolute;
   width: 100%;
   background-color: var(--third-color);
   padding: 20px 80px;
