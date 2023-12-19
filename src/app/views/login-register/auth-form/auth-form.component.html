@@ -3,12 +3,22 @@
   <div class="container-fields">
     <mat-form-field class="field">
       <mat-label>Nickname</mat-label>
-      <input matInput type="text" formControlName="nickname" />
+      <input
+        matInput
+        type="text"
+        formControlName="nickname"
+        autocomplete="username"
+      />
     </mat-form-field>
 
     <mat-form-field class="field">
       <mat-label>Password</mat-label>
-      <input matInput type="password" formControlName="password" />
+      <input
+        matInput
+        type="password"
+        formControlName="password"
+        autocomplete="current-password"
+      />
     </mat-form-field>
   </div>
   <button type="submit" [disabled]="!profileForm.valid">Sign in</button>

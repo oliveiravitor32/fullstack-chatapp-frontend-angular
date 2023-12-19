@@ -1,69 +1,9 @@
-section {
-  height: 100vh;
-  width: 100vw;
-  background-color: #f2f2f2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  background-size: 50%;
-  background: rgb(242, 242, 242);
-  background-image: url("../../../assets/background-view-welcome.svg");
-}
-
-article {
-  background-color: var(--first-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 800px;
-  border: 5px solid black;
-  border-radius: 10px;
-  padding: 20px 10px;
-  gap: 20px;
-}
-
-article h1 {
-  font-size: 40px;
-  font-weight: 800;
-}
-
-article p {
-  font-size: 30px;
-  font-weight: 600;
-  text-align: center;
-}
-
-.container-redirect-auth {
-  background-color: var(--third-color);
-  display: flex;
-  padding: 25px 0;
-  gap: 50px;
-  border-radius: 10px;
-  width: 500px;
-  justify-content: center;
-  border: 5px solid rgb(61, 61, 61);
-}
-
-.container-redirect-auth button {
-  font-size: 18px;
-  font-weight: 700;
-  border-radius: 10px;
-  border: none;
-  padding: 8px;
-  background-color: var(--second-color);
-  color: var(--first-color);
-  cursor: pointer;
-}
-
-.container-redirect-auth button:hover {
-  background-color: var(--fourth-color);
-}
-
 @media screen and (max-width: 1000px) {
+  section {
+    padding: 0 80px;
+  }
   article {
-    width: 550px;
+    width: auto;
   }
 
   article h1 {
@@ -74,27 +14,32 @@ article p {
     font-size: 24px;
   }
   .container-redirect-auth {
-    width: 275px;
+    width: 300px;
     padding: 15px 0;
     gap: 0px;
     justify-content: space-around;
   }
 }
+@media screen and (max-width: 800px) {
+  section {
+    padding: 0 40px;
+  }
+}
 
 @media screen and (max-width: 600px) {
-  article {
-    width: 380px;
+  section {
+    padding: 0 15px;
   }
 
   article h1 {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   article p {
-    font-size: 18px;
+    font-size: 20px;
   }
   .container-redirect-auth {
-    width: 180px;
+    width: 220px;
     padding: 10px 0;
     border: 3px solid rgb(61, 61, 61);
   }
@@ -105,10 +50,6 @@ article p {
 }
 
 @media screen and (max-width: 400px) {
-  article {
-    width: 300px;
-  }
-
   article p {
     font-size: 16px;
   }
