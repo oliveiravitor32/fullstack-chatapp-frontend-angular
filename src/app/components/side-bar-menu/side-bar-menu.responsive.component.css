@@ -1,0 +1,48 @@
+@media screen and (max-width: 800px) {
+  .container-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    z-index: 2;
+    min-width: 280px;
+  }
+
+  .container-wrapper.open .close-button {
+    display: block;
+  }
+
+  .container-wrapper.open {
+    transform: translateX(0%);
+    animation: open 0.2s linear;
+  }
+
+  .container-wrapper.close {
+    transform: translateX(-100%);
+    animation: close 0.2s linear;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container-wrapper {
+    min-width: 260px;
+  }
+}
+
+@keyframes open {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes close {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

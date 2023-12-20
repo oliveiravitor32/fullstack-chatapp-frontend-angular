@@ -1,0 +1,18 @@
+<div class="container-wrapper" [ngClass]="statusMenu ? 'open' : 'close'">
+  <nav class="container">
+    <app-personal-card></app-personal-card>
+    <div class="container-room-infos">
+      <a routerLink="">New room</a>
+      <a routerLink="">All rooms</a>
+    </div>
+    <a routerLink="" class="sign-out-link">Sign Out</a>
+  </nav>
+  <button
+    aria-label="button with icon to close the side bar menu"
+    class="close-button"
+    (click)="toggleMenu()"
+  >
+    <span class="visually-hidden">Close menu</span>
+    <img src="../../../assets/close-icon.svg" alt="X icon" />
+  </button>
+</div>

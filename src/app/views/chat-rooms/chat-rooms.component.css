@@ -22,27 +22,3 @@
   padding: 0 30px;
   gap: 80px;
 }
-
-.container .chat-rooms-section header {
-  width: 100%;
-  background-color: var(--third-color);
-  padding: 20px 80px;
-  font-weight: 700;
-  font-size: 24px;
-  color: var(--first-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.button-menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-mat-icon {
-  color: white;
-  font-size: 30px;
-  margin: 0 2px 5px 0;
-  text-align: center;
-}
