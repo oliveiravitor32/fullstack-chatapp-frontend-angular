@@ -9,7 +9,8 @@
   border-radius: 20px 0 20px 20px;
   color: var(--first-color);
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
+  border: 2.5px solid var(--third-color);
 }
 
 @media screen and (max-width: 1200px) {

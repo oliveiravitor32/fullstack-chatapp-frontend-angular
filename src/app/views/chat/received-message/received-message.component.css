@@ -3,20 +3,21 @@
   width: auto;
   max-width: 40%;
   height: auto;
-  padding: 15px 20px;
+  padding: 20px 20px;
   border-radius: 0px 20px 20px 20px;
   gap: 10px;
   background-color: var(--fourth-color);
   color: var(--first-color);
-  font-size: 18;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 500;
+  border: 2.5px solid rgb(0, 0, 0);
 }
 
 .container span {
   display: block;
   font-weight: 700;
   font-size: 20px;
-  color: rgb(6, 61, 179);
+  color: rgb(236, 236, 236);
   margin-bottom: 10px;
 }
 

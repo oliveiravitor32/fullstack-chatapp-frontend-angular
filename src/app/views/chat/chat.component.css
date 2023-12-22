@@ -12,9 +12,9 @@
 .chat-section {
   flex: 1;
   height: 80%;
-  background-color: #cfcfcf;
+  background-color: #f2f2f2;
   background-image: url(../../../assets/background-chat-view.svg);
-  background-size: 30%;
+  background-size: 20%;
   overflow: auto;
 }
 
