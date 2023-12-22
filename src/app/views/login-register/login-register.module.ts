@@ -9,6 +9,7 @@ import { SharedMaterialModule } from 'src/app/shared/shared-material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SignInModalComponent } from './sign-in-modal/sign-in-modal.component';
 import { SignUpModalComponent } from './sign-up-modal/sign-up-modal.component';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import {
   MatFormFieldModule,
@@ -17,8 +18,8 @@ import {
 } from '@angular/material/form-field';
 
 const formFieldOptions: MatFormFieldDefaultOptions = {
-  appearance: 'outline', // Define a aparência padrão dos campos de formulário (fill, outline, standard)
-  hideRequiredMarker: false, // Esconde ou exibe o marcador de campo obrigatório
+  appearance: 'outline',
+  hideRequiredMarker: false,
 };
 
 @NgModule({

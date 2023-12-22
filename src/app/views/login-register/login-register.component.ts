@@ -16,7 +16,8 @@ export class LoginRegisterComponent {
 
   openSignUpModal(): void {
     this.dialog.open(SignUpModalComponent, {
-      width: '600px',
+      width: '650px',
+      height: '350px',
       maxWidth: '100vw',
       maxHeight: '100vh',
       panelClass: 'custom-dialog',
@@ -28,10 +29,11 @@ export class LoginRegisterComponent {
 
   openSignInModal(): void {
     this.dialog.open(SignInModalComponent, {
-      width: '600px',
+      width: '650px',
+      height: '350px',
       maxWidth: '100vw',
       maxHeight: '100vh',
-      panelClass: 'modalStyle',
+      panelClass: ['custom-dialog', '-bg-onyx'],
       backdropClass: 'modalStyleBackdrop',
       disableClose: true,
       autoFocus: false,
