@@ -1,17 +1,44 @@
 .container {
-  display: flex;
-  flex-direction: column;
+  display: inline-block;
+  width: auto;
   max-width: 40%;
+  height: auto;
   padding: 15px 20px;
   border-radius: 0px 20px 20px 20px;
   gap: 10px;
-  background-color: var(--third-color);
+  background-color: var(--fourth-color);
   color: var(--first-color);
   font-size: 18;
   font-weight: 600;
 }
+
 .container span {
+  display: block;
   font-weight: 700;
   font-size: 20px;
   color: rgb(6, 61, 179);
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 60%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container {
+    max-width: 80%;
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+  .container span {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    max-width: 85%;
+    font-size: 12px;
+  }
 }

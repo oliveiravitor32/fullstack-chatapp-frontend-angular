@@ -1,0 +1,26 @@
+@media screen and (max-width: 1000px) {
+  .form-send-message {
+    padding: 10px 40px;
+  }
+  mat-form-field {
+    font-size: 14px;
+  }
+  mat-label {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .form-send-message {
+    padding: 5px 10px;
+    gap: 10px;
+  }
+
+  .send-message-btn {
+    width: 40px;
+    height: 40px;
+    background-size: 80%;
+    border: 2px solid #458c57;
+    border-radius: 50%;
+  }
+}

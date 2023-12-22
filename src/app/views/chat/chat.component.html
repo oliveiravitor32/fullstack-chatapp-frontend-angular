@@ -15,9 +15,14 @@
       </div>
     </section>
     <form (submit)="onSubmit($event)" class="form-send-message">
-      <mat-form-field class="mat-form-field-sm">
+      <mat-form-field appearance="outline">
         <mat-label for="message">Message:</mat-label>
-        <input id="message" matInput [formControl]="message" />
+        <textarea
+          matInput
+          id="message"
+          matInput
+          [formControl]="message"
+        ></textarea>
       </mat-form-field>
       <button
         aria-label="Send message"
