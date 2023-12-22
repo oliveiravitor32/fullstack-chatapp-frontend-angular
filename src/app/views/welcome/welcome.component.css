@@ -60,5 +60,9 @@ article p {
 }
 
 .container-redirect-auth button:hover {
+  transform: scale(1.1);
+}
+
+.container-redirect-auth button:active {
   background-color: var(--fourth-color);
 }
