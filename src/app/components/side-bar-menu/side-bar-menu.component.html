@@ -2,8 +2,17 @@
   <nav class="container">
     <app-personal-card></app-personal-card>
     <div class="container-room-infos">
-      <a routerLink="">New room</a>
-      <a routerLink="">All rooms</a>
+      <a
+        *ngIf="inChatRooms; else inChat"
+        routerLink="/chatrooms"
+        (click)="navigateToChat()"
+        >New Room</a
+      >
+      <ng-template #inChat>
+        <a routerLink="/chatrooms/chat" (click)="navigateToChatRooms()"
+          >All Rooms</a
+        >
+      </ng-template>
     </div>
     <a routerLink="" class="sign-out-link">Sign Out</a>
   </nav>

@@ -18,9 +18,6 @@
   overflow-y: auto;
 }
 
-a {
-  cursor: pointer;
-}
 .close-button {
   display: none;
   position: absolute;
@@ -63,6 +60,9 @@ a {
   flex: 2;
 }
 
+a {
+  cursor: pointer;
+}
 .container-room-infos a {
   color: white;
   font-weight: 700;
