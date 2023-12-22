@@ -1,4 +1,13 @@
 <div class="container">
   <h1>Wealcome to the ChatApp</h1>
-  <app-auth-form class="auth-form"></app-auth-form>
+  <div class="container-infos">
+    It's great to welcome you to our online chat platform, an interactive space
+    where you can connect, share ideas and exchange instant messages with
+    friends, colleagues or customers. With an intuitive interface and robust
+    features, our app offers a seamless and engaging communication experience.
+    <div class="container-buttons">
+      <button (click)="openSignUpModal()">Sign up</button>
+      <button (click)="openSignInModal()">Sign in</button>
+    </div>
+  </div>
 </div>

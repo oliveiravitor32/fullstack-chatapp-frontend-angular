@@ -1,0 +1,28 @@
+<h2 mat-dialog-title align="center">Sign Up</h2>
+<div mat-dialog-content>
+  <form action="" [formGroup]="signUpForm">
+    <mat-form-field class="custom-form-field">
+      <mat-label>Nickname</mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="nickname"
+        autocomplete="username"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="custom-form-field">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        type="password"
+        formControlName="password"
+        autocomplete="current-password"
+      />
+    </mat-form-field>
+  </form>
+</div>
+<mat-dialog-actions align="center">
+  <button mat-button mat-dialog-close class="button-cancel">Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Sign in</button>
+</mat-dialog-actions>
