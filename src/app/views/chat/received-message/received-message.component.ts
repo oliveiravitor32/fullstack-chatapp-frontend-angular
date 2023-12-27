@@ -25,22 +25,17 @@ export class ReceivedMessageComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.generateColor();
+    this.getColor();
   }
 
-  generateColor() {
+  getColor() {
     let aux: number = 0;
 
-    for (let i = 0; i < this.author.length; i++) {
+    for (let i = 0; i < 3; i++) {
       aux += parseInt(this.author.charCodeAt(i).toString()[0]);
     }
 
-    aux = Math.round(aux / this.author.length);
-    console.log(aux);
-
-    while (aux > 11) {
-      aux - Math.round(aux / 2);
-    }
+    aux = aux % 12;
 
     this.color = this.colors[aux];
   }
