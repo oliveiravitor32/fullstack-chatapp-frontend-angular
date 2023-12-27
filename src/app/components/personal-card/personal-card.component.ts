@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './personal-card.component.html',
   styleUrls: ['./personal-card.component.css'],
 })
-export class PersonalCardComponent {}
+export class PersonalCardComponent {
+  nickname: string = 'Lucas';
+}
