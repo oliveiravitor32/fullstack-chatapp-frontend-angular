@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-chat-room-card',
@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
     './chat-room-card.responsive.component.css',
   ],
 })
-export class ChatRoomCardComponent {}
+export class ChatRoomCardComponent {
+  @Input() roomName: String = '';
+}
