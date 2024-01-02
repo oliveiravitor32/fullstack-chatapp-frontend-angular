@@ -55,6 +55,7 @@ textarea {
   border: 2px solid #458c57;
   border-radius: 50%;
 }
+
 .send-message-btn:active {
   transform: scale(1.1);
 }

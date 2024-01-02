@@ -17,12 +17,7 @@
     <form (submit)="onSubmit($event)" class="form-send-message">
       <mat-form-field appearance="outline">
         <mat-label for="message">Message:</mat-label>
-        <textarea
-          matInput
-          id="message"
-          matInput
-          [formControl]="message"
-        ></textarea>
+        <textarea id="message" matInput [formControl]="message"></textarea>
       </mat-form-field>
       <button
         aria-label="Send message"
