@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RegisterUser } from 'src/app/models/registerUser';
 import { AuthService } from 'src/app/service/auth.service';
@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/service/auth.service';
   templateUrl: './sign-up-modal.component.html',
   styleUrls: ['./sign-up-modal.component.css'],
 })
-export class SignUpModalComponent {
+export class SignUpModalComponent implements OnInit {
   signUpForm = new FormGroup({
     nickname: new FormControl('', [
       Validators.pattern('[a-zA-Z0-9]+$'),
@@ -22,7 +22,15 @@ export class SignUpModalComponent {
     ]),
   });
 
+  userAlreadyExists: boolean = false;
+  successfulSignUp: boolean = false;
+
   constructor(private authService: AuthService) {}
+
+  ngOnInit() {
+    this.userAlreadyExists = false;
+    this.successfulSignUp = false;
+  }
 
   onSubmit() {
     const body: RegisterUser = {
@@ -30,12 +38,13 @@ export class SignUpModalComponent {
       password: this.signUpForm.value.password,
     };
     this.authService.register(body).subscribe(
-      (response) => {
-        console.log('Sucesso na requisição:', response);
+      () => {
+        this.successfulSignUp = true;
       },
-      (error) => {
-        console.error('Erro na requisição:', error);
+      () => {
+        this.userAlreadyExists = true;
       }
     );
+    this.signUpForm.reset();
   }
 }

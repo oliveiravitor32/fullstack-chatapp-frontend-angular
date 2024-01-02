@@ -1,6 +1,15 @@
 <h2 mat-dialog-title align="center">Sign Up</h2>
 <div mat-dialog-content>
-  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+  <b
+    *ngIf="userAlreadyExists && !successfulSignUp"
+    style="color: rgb(194, 39, 39); margin: 0 auto"
+    >Nickname already exists! Try again</b
+  >
+  <form
+    [formGroup]="signUpForm"
+    (ngSubmit)="onSubmit()"
+    *ngIf="!successfulSignUp; else successSignUp"
+  >
     <mat-form-field class="custom-form-field">
       <mat-label>Nickname</mat-label>
       <input
@@ -20,9 +29,16 @@
         autocomplete="current-password"
       />
     </mat-form-field>
+
     <div class="container-buttons">
       <button mat-button mat-dialog-close class="button-cancel">Cancel</button>
       <button mat-button>Sign up</button>
     </div>
   </form>
+  <ng-template #successSignUp>
+    <div class="container-sucessful-sign-up">
+      <h2>Registration successful!</h2>
+      <button mat-button mat-dialog-close class="button-cancel">Close</button>
+    </div>
+  </ng-template>
 </div>
