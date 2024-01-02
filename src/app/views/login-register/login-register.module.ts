@@ -9,10 +9,9 @@ import { SharedMaterialModule } from 'src/app/shared/shared-material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SignInModalComponent } from './sign-in-modal/sign-in-modal.component';
 import { SignUpModalComponent } from './sign-up-modal/sign-up-modal.component';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import {
-  MatFormFieldModule,
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
   MatFormFieldDefaultOptions,
 } from '@angular/material/form-field';
@@ -34,6 +33,7 @@ const formFieldOptions: MatFormFieldDefaultOptions = {
     LoginRegisterRoutingModule,
     SharedMaterialModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: formFieldOptions },

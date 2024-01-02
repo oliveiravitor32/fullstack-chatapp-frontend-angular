@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { RegisterUser } from 'src/app/models/registerUser';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-sign-up-modal',
@@ -19,4 +21,21 @@ export class SignUpModalComponent {
       Validators.minLength(6),
     ]),
   });
+
+  constructor(private authService: AuthService) {}
+
+  onSubmit() {
+    const body: RegisterUser = {
+      nickname: this.signUpForm.value.nickname,
+      password: this.signUpForm.value.password,
+    };
+    this.authService.register(body).subscribe(
+      (response) => {
+        console.log('Sucesso na requisição:', response);
+      },
+      (error) => {
+        console.error('Erro na requisição:', error);
+      }
+    );
+  }
 }
