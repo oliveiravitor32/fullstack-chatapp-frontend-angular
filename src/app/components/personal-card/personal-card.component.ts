@@ -6,12 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./personal-card.component.css'],
 })
 export class PersonalCardComponent implements OnInit {
-  nickname: string = '';
+  nickname: string = 'a';
 
   ngOnInit(): void {
     const storedData = sessionStorage.getItem('nickname');
     if (storedData !== null) {
-      const sessionData = JSON.parse(storedData);
+      const sessionData = storedData;
       this.nickname = sessionData;
     }
   }
