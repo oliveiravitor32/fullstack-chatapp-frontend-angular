@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ChatRoomModel } from 'src/app/models/chatroom-model';
 
 @Component({
   selector: 'app-chat-room-card',
@@ -9,5 +10,5 @@ import { Component, Input } from '@angular/core';
   ],
 })
 export class ChatRoomCardComponent {
-  @Input() roomName: String = '';
+  @Input() room: ChatRoomModel = {id: 0, name: ''};
 }
