@@ -4,20 +4,21 @@
     <app-header></app-header>
     <section class="chat-section">
       <div class="container-messages">
-        <app-received-message author="John"></app-received-message>
-        <app-sent-message></app-sent-message>
-        <app-received-message author="Anna"></app-received-message>
-        <app-sent-message></app-sent-message>
-        <app-received-message author="Bob"></app-received-message>
-        <app-sent-message></app-sent-message>
-        <app-received-message author="John"></app-received-message>
-        <app-sent-message></app-sent-message>
+        <div *ngFor="let message of allMessages; let i = index">
+          <app-sent-message
+            *ngIf="message.author.name == actualUser; else receivedMessage"
+            >{{ message.content }}</app-sent-message
+          >
+          <ng-template #receivedMessage>
+            <app-received-message [message]="message"></app-received-message>
+          </ng-template>
+        </div>
       </div>
     </section>
     <form (submit)="onSubmit($event)" class="form-send-message">
       <mat-form-field appearance="outline">
         <mat-label for="message">Message:</mat-label>
-        <textarea id="message" matInput [formControl]="message"></textarea>
+        <textarea id="message" matInput [formControl]="sendMessage"></textarea>
       </mat-form-field>
       <button
         aria-label="Send message"

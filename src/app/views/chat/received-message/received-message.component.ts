@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MessageModel } from 'src/app/models/message-model';
 
 @Component({
   selector: 'app-received-message',
@@ -6,7 +7,14 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./received-message.component.css'],
 })
 export class ReceivedMessageComponent implements OnInit {
-  @Input() author: string = '';
+  @Input() message: MessageModel = {
+    id: 0,
+    content: '...',
+    likes: 0,
+    timestemp: '',
+    author: { id: 0, name: 'string' },
+  };
+
   color: string = '#f2f2f2';
 
   colors: string[] = [
@@ -32,7 +40,7 @@ export class ReceivedMessageComponent implements OnInit {
     let aux: number = 0;
 
     for (let i = 0; i < 3; i++) {
-      aux += parseInt(this.author.charCodeAt(i).toString()[0]);
+      aux += parseInt(this.message.author.name.charCodeAt(i).toString()[0]);
     }
 
     aux = aux % 12;
