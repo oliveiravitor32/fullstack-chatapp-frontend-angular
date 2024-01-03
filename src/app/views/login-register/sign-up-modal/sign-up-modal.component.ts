@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { RegisterUser } from 'src/app/models/registerUser';
+import { AuthUser } from 'src/app/models/authUser';
+
 import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
@@ -33,18 +34,18 @@ export class SignUpModalComponent implements OnInit {
   }
 
   onSubmit() {
-    const body: RegisterUser = {
+    const body: AuthUser = {
       nickname: this.signUpForm.value.nickname,
       password: this.signUpForm.value.password,
     };
-    this.authService.register(body).subscribe(
-      () => {
+    this.authService.register(body).subscribe({
+      next: () => {
         this.successfulSignUp = true;
       },
-      () => {
+      error: () => {
         this.userAlreadyExists = true;
-      }
-    );
+      },
+    });
     this.signUpForm.reset();
   }
 }

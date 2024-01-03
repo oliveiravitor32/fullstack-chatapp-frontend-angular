@@ -45,3 +45,14 @@ button:disabled {
 mat-dialog-actions {
   gap: 60px;
 }
+
+b {
+  color: rgb(194, 39, 39);
+}
+
+.container-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}

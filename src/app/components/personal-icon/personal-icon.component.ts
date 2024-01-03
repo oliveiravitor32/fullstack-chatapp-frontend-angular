@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./personal-icon.component.css'],
 })
 export class PersonalIconComponent {
-  @Input() name: String = 'A';
+  @Input() nickname: String = 'A';
 }

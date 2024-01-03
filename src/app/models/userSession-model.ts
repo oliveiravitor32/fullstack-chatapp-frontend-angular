@@ -1,0 +1,3 @@
+interface UseSession {
+  nickname: string;
+}
