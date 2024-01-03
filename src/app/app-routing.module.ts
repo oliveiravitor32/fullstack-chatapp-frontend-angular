@@ -22,7 +22,7 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'chatrooms/chat',
+    path: 'chatrooms/chat/:id',
     loadChildren: () =>
       import('./views/chat/chat.module').then((m) => m.ChatModule),
   },
