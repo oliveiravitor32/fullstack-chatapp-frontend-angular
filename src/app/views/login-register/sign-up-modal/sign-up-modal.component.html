@@ -1,12 +1,12 @@
 <h2 mat-dialog-title align="center">Sign Up</h2>
 <div mat-dialog-content>
-  <b *ngIf="userAlreadyExists && !successfulSignUp"
+  <b *ngIf="userAlreadyExists && !successfulSignUp && !load"
     >Nickname already exists! Try again</b
   >
   <form
     [formGroup]="signUpForm"
     (ngSubmit)="onSubmit()"
-    *ngIf="!successfulSignUp; else successSignUp"
+    *ngIf="!successfulSignUp && !load; else successSignUp"
   >
     <mat-form-field class="custom-form-field">
       <mat-label>Nickname</mat-label>
@@ -34,9 +34,18 @@
     </div>
   </form>
   <ng-template #successSignUp>
-    <div class="container-sucessful-sign-up">
+    <div class="container-sucessful-sign-up" *ngIf="!load; else loading">
       <h2>Registration successful!</h2>
       <button mat-button mat-dialog-close class="button-cancel">Close</button>
     </div>
+    <ng-template #loading>
+      <mat-progress-spinner
+        class="load-spinner"
+        color="accent"
+        mode="indeterminate"
+        [value]="50"
+      >
+      </mat-progress-spinner>
+    </ng-template>
   </ng-template>
 </div>

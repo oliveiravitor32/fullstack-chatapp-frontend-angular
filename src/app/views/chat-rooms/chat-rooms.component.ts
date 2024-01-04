@@ -12,6 +12,7 @@ import { ChatRoomsService } from 'src/app/service/chatrooms.service';
 })
 export class ChatRoomsComponent implements OnInit {
   menuOpen: boolean = false;
+  load: boolean = false;
 
   rooms: ChatRoomModel[] = [];
 
@@ -22,9 +23,11 @@ export class ChatRoomsComponent implements OnInit {
   constructor(private chatRoomsService: ChatRoomsService) {}
 
   ngOnInit(): void {
+    this.load = true;
     this.chatRoomsService.getAllChatrooms().subscribe({
       next: (res) => {
         this.rooms = res;
+        this.load = false;
       },
     });
   }

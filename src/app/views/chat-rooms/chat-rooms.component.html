@@ -2,11 +2,16 @@
   <app-side-bar-menu> </app-side-bar-menu>
   <section class="chat-rooms-section">
     <app-header></app-header>
-    <div class="container-chat-rooms-card">
-      <app-chat-room-card
-        *ngFor="let room of rooms"
-        [room]="room"
-      ></app-chat-room-card>
+    <div class="container-chat-rooms-cards">
+      <div *ngIf="!load; else loading" class="container-cards">
+        <app-chat-room-card
+          *ngFor="let room of rooms"
+          [room]="room"
+        ></app-chat-room-card>
+      </div>
+      <ng-template #loading
+        ><mat-spinner class="load-spinner"></mat-spinner
+      ></ng-template>
     </div>
   </section>
 </div>

@@ -17,6 +17,8 @@ export class ChatComponent implements OnDestroy {
 
   actualUser: String | null = '';
 
+  load: boolean = true;
+
   constructor(
     private route: ActivatedRoute,
     private chatService: ChatService,
@@ -31,6 +33,7 @@ export class ChatComponent implements OnDestroy {
   }
 
   joinTheChat() {
+    this.load = true;
     const id = this.route.snapshot.paramMap.get('id');
     this.chatService.joinTheChat(id).subscribe({
       next: (resp) => {
@@ -45,6 +48,7 @@ export class ChatComponent implements OnDestroy {
     this.chatService.getAllMessages(this.room.id).subscribe({
       next: (resp) => {
         this.allMessages = resp;
+        this.load = false;
       },
     });
   }

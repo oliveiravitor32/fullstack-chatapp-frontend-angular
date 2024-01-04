@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ThemePalette } from '@angular/material/core';
 import { AuthUser } from 'src/app/models/authUser';
 
 import { AuthService } from 'src/app/service/auth.service';
@@ -26,6 +27,8 @@ export class SignUpModalComponent implements OnInit {
   userAlreadyExists: boolean = false;
   successfulSignUp: boolean = false;
 
+  load: boolean = false;
+
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
@@ -34,6 +37,7 @@ export class SignUpModalComponent implements OnInit {
   }
 
   onSubmit() {
+    this.load = true;
     const body: AuthUser = {
       nickname: this.signUpForm.value.nickname,
       password: this.signUpForm.value.password,
@@ -41,9 +45,11 @@ export class SignUpModalComponent implements OnInit {
     this.authService.register(body).subscribe({
       next: () => {
         this.successfulSignUp = true;
+        this.load = false;
       },
       error: () => {
         this.userAlreadyExists = true;
+        this.load = false;
       },
     });
     this.signUpForm.reset();

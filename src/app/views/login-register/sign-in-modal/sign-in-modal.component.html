@@ -1,7 +1,11 @@
 <h2 mat-dialog-title align="center">Sign in</h2>
 <div mat-dialog-content>
   <b *ngIf="loginFailed">Sorry we couldn't find your account. Try again.</b>
-  <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+  <form
+    [formGroup]="signInForm"
+    (ngSubmit)="onSubmit()"
+    *ngIf="!load; else loading"
+  >
     <mat-form-field class="custom-form-field">
       <mat-label>Nickname</mat-label>
       <input
@@ -26,4 +30,13 @@
       <button mat-button type="submit">Sign in</button>
     </div>
   </form>
+  <ng-template #loading>
+    <mat-progress-spinner
+      class="load-spinner"
+      color="primary"
+      mode="indeterminate"
+      [value]="50"
+    >
+    </mat-progress-spinner>
+  </ng-template>
 </div>

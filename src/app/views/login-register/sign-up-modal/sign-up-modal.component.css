@@ -6,6 +6,7 @@ h2 {
 }
 
 form {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -59,4 +60,9 @@ b {
   align-items: center;
   justify-content: center;
   gap: 60px;
+}
+
+.load-spinner {
+  margin: 60px auto;
+  color: #f2f2f2;
 }

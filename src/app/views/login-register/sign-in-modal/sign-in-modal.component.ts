@@ -26,6 +26,7 @@ export class SignInModalComponent implements OnInit {
   });
 
   loginFailed: boolean = false;
+  load: boolean = false;
 
   constructor(
     public dialogRef: MatDialogRef<SignInModalComponent>,
@@ -37,6 +38,7 @@ export class SignInModalComponent implements OnInit {
   }
 
   onSubmit() {
+    this.load = true;
     const body: AuthUser = {
       nickname: this.signInForm.value.nickname,
       password: this.signInForm.value.password,
@@ -46,10 +48,11 @@ export class SignInModalComponent implements OnInit {
       next: () => {
         this.dialogRef.close();
         this.router.navigate(['/chatrooms']);
+        this.load = false;
       },
       error: () => {
         this.loginFailed = true;
-        this.signInForm.reset();
+        this.load = false;
       },
     });
 

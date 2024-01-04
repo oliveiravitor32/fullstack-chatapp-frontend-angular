@@ -8,17 +8,31 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
+$custom-accent: (
+  50: #404040,
+  100: #404040,
+  500: #404040,
+  700: #404040,
+  contrast: (
+    50: white,
+    100: white,
+    500: white,
+    700: white,
+  ),
+);
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $ChatApp-Front-primary: mat.define-palette(mat.$green-palette);
-$ChatApp-Front-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$ChatApp-Front-accent: mat.define-palette($custom-accent);
 
 // The warn palette is optional (defaults to red).
 $ChatApp-Front-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
+
 $ChatApp-Front-theme: mat.define-light-theme(
   (
     color: (
