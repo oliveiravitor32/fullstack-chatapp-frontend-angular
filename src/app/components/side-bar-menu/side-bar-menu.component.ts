@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuControlService } from 'src/app/services/menu-control.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-side-bar-menu',
@@ -17,6 +18,7 @@ export class SideBarMenuComponent implements OnInit {
   constructor(
     private router: Router,
     private menuControlService: MenuControlService,
+    private authService: AuthService,
     private route: ActivatedRoute
   ) {
     this.menuControlService.openSideBarMenu$.subscribe((state: boolean) => {
@@ -41,5 +43,10 @@ export class SideBarMenuComponent implements OnInit {
 
   navigateToChat() {
     this.router.navigate(['/chatrooms/chat']);
+  }
+
+  onSignOut() {
+    this.authService.signOut();
+    this.router.navigate(['/auth']);
   }
 }

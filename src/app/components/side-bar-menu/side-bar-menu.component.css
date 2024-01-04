@@ -80,3 +80,8 @@ a {
   font-weight: 800;
   font-size: 24px;
 }
+
+.sign-out-link:hover {
+  color: #63bf7a;
+  transform: scale(1.1);
+}

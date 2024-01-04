@@ -40,6 +40,11 @@ export class AuthService {
       );
   }
 
+  signOut() {
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('nickname');
+  }
+
   isUserSignedin() {
     const jwtHelper = new JwtHelperService();
 
