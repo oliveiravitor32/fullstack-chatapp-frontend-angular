@@ -1,10 +1,10 @@
-import { ChatService } from './../../service/chat.service';
+import { ChatService } from '../../services/chat.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnDestroy } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ChatRoomModel } from 'src/app/models/chatroom-model';
 import { MessageModel } from 'src/app/models/message-model';
-import { AccountService } from 'src/app/service/account.service';
+import { AccountService } from 'src/app/services/account.service';
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',

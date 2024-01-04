@@ -4,7 +4,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AuthUser } from 'src/app/models/authUser';
 
-import { AuthService } from 'src/app/service/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-sign-in-modal',

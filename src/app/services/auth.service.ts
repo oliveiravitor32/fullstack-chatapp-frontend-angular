@@ -38,4 +38,8 @@ export class AuthService {
         })
       );
   }
+
+  isUserSignedin() {
+    return sessionStorage.getItem('token') !== null;
+  }
 }

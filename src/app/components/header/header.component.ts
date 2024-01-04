@@ -1,7 +1,7 @@
-import { ChatService } from './../../service/chat.service';
+import { ChatService } from '../../services/chat.service';
 import { Component } from '@angular/core';
 
-import { MenuControlService } from 'src/app/service/menu-control.service';
+import { MenuControlService } from 'src/app/services/menu-control.service';
 
 @Component({
   selector: 'app-header',

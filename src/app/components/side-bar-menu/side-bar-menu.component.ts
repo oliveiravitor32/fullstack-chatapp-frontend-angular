@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuControlService } from 'src/app/service/menu-control.service';
+import { MenuControlService } from 'src/app/services/menu-control.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
