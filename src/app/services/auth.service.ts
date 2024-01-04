@@ -4,6 +4,7 @@ import { environment } from '../environments/environment';
 import { Observable, map } from 'rxjs';
 import { AuthUser } from '../models/authUser';
 import { AuthModel } from '../models/auth-model';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 const apiUrl = environment.apiUrl;
 
@@ -40,6 +41,17 @@ export class AuthService {
   }
 
   isUserSignedin() {
-    return sessionStorage.getItem('token') !== null;
+    const jwtHelper = new JwtHelperService();
+
+    if (sessionStorage.getItem('token')) {
+      const isTokenExpired = jwtHelper.isTokenExpired(
+        sessionStorage.getItem('token')
+      );
+
+      if (!isTokenExpired) {
+        return true;
+      }
+    }
+    return false;
   }
 }
