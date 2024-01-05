@@ -26,6 +26,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./views/chat/chat.module').then((m) => m.ChatModule),
   },
+  {
+    path: '**',
+    loadChildren: () =>
+      import('./views/not-found/not-found.module').then(
+        (m) => m.NotFoundModule
+      ),
+  },
 ];
 
 @NgModule({
