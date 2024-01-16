@@ -21,7 +21,11 @@
     <form (submit)="onSubmit($event)" class="form-send-message">
       <mat-form-field appearance="outline">
         <mat-label for="message">Message:</mat-label>
-        <textarea id="message" matInput [formControl]="sendMessage"></textarea>
+        <textarea
+          id="message"
+          matInput
+          [formControl]="mySendMessage"
+        ></textarea>
       </mat-form-field>
       <button
         aria-label="Send message"
@@ -29,5 +33,12 @@
         class="send-message-btn"
       ></button>
     </form>
+    <button
+      aria-label="Send message"
+      class="send-message-btn"
+      (click)="connectWb()"
+    >
+      connect
+    </button>
   </section>
 </div>

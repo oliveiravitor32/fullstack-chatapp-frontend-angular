@@ -5,6 +5,12 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class MenuControlService {
+  //
+  //
+  //   MUDAR PARA EVENT EMMITER, TIRAR OBSERVABLE
+  //
+  //
+  private statusSideBarMenu: boolean = false;
   private openSideBarMenuSubject = new BehaviorSubject<boolean>(false);
   openSideBarMenu$ = this.openSideBarMenuSubject.asObservable();
 

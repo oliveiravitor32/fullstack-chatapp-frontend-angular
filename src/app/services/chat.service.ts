@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ChatRoomModel } from '../models/chatroom-model';
 import { environment } from '../environments/environment';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, take } from 'rxjs';
 import { MessageModel } from '../models/message-model';
 
 const apiUrl = environment.apiUrl;
@@ -30,16 +30,17 @@ export class ChatService {
   constructor(private http: HttpClient) {}
 
   joinTheChat(id: string | null): Observable<ChatRoomModel> {
-    return this.http.get<ChatRoomModel>(
-      apiUrl + `/chatroom/${id}`,
-      this.httpOptions
-    );
+    return this.http
+      .get<ChatRoomModel>(apiUrl + `/chatroom/${id}`, this.httpOptions)
+      .pipe(take(1));
   }
 
   getAllMessages(id: number) {
-    return this.http.get<MessageModel[]>(
-      apiUrl + `/chatroom/${id}/messages`,
-      this.httpOptions
-    );
+    return this.http
+      .get<MessageModel[]>(
+        apiUrl + `/chatroom/${id}/messages`,
+        this.httpOptions
+      )
+      .pipe(take(1));
   }
 }

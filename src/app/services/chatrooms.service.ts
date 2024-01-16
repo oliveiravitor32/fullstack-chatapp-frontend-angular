@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ChatRoomModel } from '../models/chatroom-model';
-import { Observable, map } from 'rxjs';
+import { Observable, map, take } from 'rxjs';
 
 const apiUrl = environment.apiUrl;
 
@@ -21,9 +21,8 @@ export class ChatRoomsService {
   };
 
   getAllChatrooms(): Observable<ChatRoomModel[]> {
-    return this.http.get<ChatRoomModel[]>(
-      apiUrl + '/chatroom/rooms',
-      this.httpOptions
-    );
+    return this.http
+      .get<ChatRoomModel[]>(apiUrl + '/chatroom/rooms', this.httpOptions)
+      .pipe(take(1));
   }
 }

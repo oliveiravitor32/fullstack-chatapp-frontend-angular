@@ -4,6 +4,18 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class AccountService {
-  actualUser = sessionStorage.getItem('nickname');
+  private actualUser = sessionStorage.getItem('nickname');
   constructor() {}
+
+  getActualUser(): String {
+    if (!this.actualUser) {
+      //FIX AFTER
+      //
+      //
+      //
+      //
+      return '';
+    }
+    return this.actualUser;
+  }
 }

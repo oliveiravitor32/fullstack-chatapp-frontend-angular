@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment';
-import { Observable, map } from 'rxjs';
+import { Observable, map, take } from 'rxjs';
 import { AuthUser } from '../models/authUser';
 import { AuthModel } from '../models/auth-model';
 import { JwtHelperService } from '@auth0/angular-jwt';
@@ -23,7 +23,9 @@ export class AuthService {
   register(payload: AuthUser): Observable<any> {
     const body = JSON.stringify(payload);
 
-    return this.http.post(apiUrl + '/auth/register', body, this.httpOptions);
+    return this.http
+      .post(apiUrl + '/auth/register', body, this.httpOptions)
+      .pipe(take(1));
   }
 
   login(payload: AuthUser) {
@@ -32,6 +34,7 @@ export class AuthService {
     return this.http
       .post<AuthModel>(apiUrl + '/auth/login', body, this.httpOptions)
       .pipe(
+        take(1),
         map((resp: AuthModel) => {
           sessionStorage.setItem('token', 'Bearer ' + resp.token);
           sessionStorage.setItem('nickname', resp.nickname);
